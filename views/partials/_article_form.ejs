@@ -1,0 +1,27 @@
+<div class="mb-3 form-group">
+    <label for="title" class="form-label fw-bold fs-4">Title</label>
+    <input type="text" maxlength="100" value="<%= article.title %>" name="title" class="form-control" id="title" required>
+    <small class="text-danger"><%= errors.title? errors.title: '' %></small>
+  </div>
+  <div class="mb-3 form-group">
+    <label for="summary" class="form-label fw-bold fs-4">Summary</label>
+    <textarea class="form-control" contentEditable rows="3" maxlength="400" required
+    name="summary" id="summary"><%= article.summary %></textarea>
+    <small class="text-danger"><%= errors.summary? errors.summary: '' %></small>
+  </div>
+
+  <div class="mb-3 form-group">
+    <label for="content" class="form-label fw-bold fs-4">Content</label>
+    <p><a href="/guide">Click here</a> to take a look at our Guide of formatting.</p>
+    <textarea class="form-control" contentEditable rows="20" minlength="10" maxlength="75000"
+    name="content" id="content" required><%= article.content %></textarea>
+  </div>
+  <div class="mb-3 form-group">
+    <label for="thumbnail" class="form-label fw-bold fs-4">Thumbnail</label>
+    <input class="form-control" type="file" name="thumbnail" id="thumbnail">
+    <small class="text-danger"><%= errors.thumbnail? errors.thumbnail: '' %></small>
+  </div>
+  <div class="mb-3">
+    <button type="submit" class="btn btn-outline-success">Save</button>
+    <a href="/" type="submit" class="btn btn-outline-secondary">Cancel</a>
+  </div>

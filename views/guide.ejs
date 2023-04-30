@@ -1,0 +1,120 @@
+<%- include('./partials/_upper.ejs')%>
+<h2 class="mt-5 mb-5">Guide:</h3>
+
+    <div class="d-flex justify-content-between">
+        <table style="width: 100%; ">
+            <thead>
+                <tr>
+                    <th>Markdown</th>
+                    <th>Resullt</th>
+                </tr>
+                <tr>
+                    <td>#</td>
+                    <td><h1>H1 tag</h1></td>
+                </tr>
+                <tr>
+                    <td>##</td>
+                    <td><h2>H2 tag</h2></td>
+                </tr>
+                <tr>
+                    <td>###### The 6th is the largest count</td>
+                    <td>the count of the # represent the h tag number</td>
+                </tr>
+                <tr>
+                    <td>*Italic*</td>
+                    <td><i>Italic</i></td>
+                </tr>
+                <tr>
+                    <td>**Bold**</td>
+                    <td><strong>Bold</strong></td>
+                </tr>
+                <tr>
+                    <td>`Some Codeing stuff`</td>
+                    <td><code>Some Codeing stuff</code></td>
+                </tr>
+                <tr>
+                    <td>
+                    Unordered list with either *, - or + and<br>
+                     it can be multi leveled(indenting items by four spaces.)
+                    <br>
+                    <pre>
+    * item1
+    - item2
+        + item3</pre>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>item1</li>
+                            <li>
+                                item2
+                                <ul><li>item3</li></ul>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    ordered list by preceding items with a number.
+                    <br>
+                        1. Item 1   <br>
+                        2. Item 2   <br>
+                        3. Item 3
+                    </td>
+                    <td>
+                        <ol>
+                            <li>item1</li>
+                            <li>item2</li>
+                            <li>item3</li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr>
+                    <td> < https://www.link.com> </td>
+                    <td><a href="https://www.link.com">link.com</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        this is a [link to google][1] <br>
+                        [1]: https://www.google.com
+                    </td>
+                    <td>this is a <a href="https://www.google.com">link to google</a></td>
+                </tr>
+                <tr>
+                    <td>
+    <pre>
+        | Tables        | Are           | Cool  |
+        | ------------- |:-------------:| -----:|
+        | col 3 is      | right-aligned | $1600 |
+        | col 2 is      | *centered*    |   $12 |
+        | zebra stripes | ~~are neat~~  |    $1 |
+    </pre>
+    note that (:) in the second row is used to align the text
+                    </td>
+                    <td>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Create</th>
+                                <th style="text-align:center;">A</th>
+                                <th style="text-align:right;">Table</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>col 3 is</td>
+                                <td style="text-align:center;">right-aligned</td>
+                                <td style="text-align:right;">1</td>
+                            </tr>
+                            <tr>
+                                <td>col 2 is</td>
+                                <td style="text-align:center;"><em>centered</em></td>
+                                <td style="text-align:right;">2</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+<%- include('./partials/_lower.ejs')%>

@@ -1,0 +1,33 @@
+<%- include('../partials/_upper.ejs')%>
+    <h3 class="mt-5">Article:</h3>
+    <hr>
+
+    <h1 class="mb-4" style="font-size: 3.5rem; overflow-wrap:break-word;"><%=article.title%></h1>
+    <img style="width: 100%; height: 400px; object-fit: cover;"
+                src="data:image/<%=article.thumbnail.contentType%>;base64,
+                        <%=article.thumbnail.data.toString('base64')%>"
+            />
+    <div class="d-flex justify-content-between mt-3">
+        <small class="text-muted" style="place-self: center;">
+            Author: 
+            <a href="/accounts/u/<%= article.author %>" class="text-dark"> 
+                <%= author.full_name %> 
+                <span style="font-size: 10px;"><%= author.email %></span>
+            </a>
+            <br>
+            Date:
+            <%=article.date.toLocaleDateString()%> 
+        </small>
+        <div class="mb-5">
+            <% if(article.author == user?.id){ %>
+                <a class="btn btn-outline-dark" href="/articles/update/<%=article.id%>">Edit</a>
+                <form class="d-inline" action="/articles/<%=article.id%>?_method=DELETE" method="post">
+                    <button class="btn btn-outline-danger" type="submit">Delete</button>
+                </form>
+            <% } %>
+        </div>
+    </div>
+    
+    <div style="overflow-wrap:break-word;"><%-article.content%></div>
+    <a href="/" class="btn btn-outline-secondary my-2">All Articles</a>
+<%- include('../partials/_lower.ejs')%>

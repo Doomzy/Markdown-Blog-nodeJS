@@ -1,0 +1,62 @@
+<%- include('../partials/_upper.ejs')%>
+  <div class="row d-flex justify-content-center align-items-center mt-5">
+    <form class="col-12 col-md-9" method="post" action="/accounts/signup">
+      <div class="card bg-dark text-white" style="border-radius: 1rem;">
+        <div class="card-body p-5 row">
+          <h1 class="fw-bold mb-2 text-uppercase">Signup</h1>
+
+          <div class="mb-md-5 mt-md-4 pb-1 col-6">
+            
+            <div class="form-white mb-4">
+              <label class="form-label" for="email">Email</label>
+              <input required type="email" value="<%= userData.email%>" id="email" name="email" class="form-control form-control-lg" />
+              <small class="text-danger"><%= errors.email? errors.email: '' %></small>
+            </div>
+
+            <div class="form-white mb-4">
+              <label class="form-label" for="oPassword">Password</label>
+              <input required type="password" id="oPassword" name="oPassword" class="form-control form-control-lg" />
+              <small class="text-danger"><%= errors.password? errors.password: '' %></small>
+            </div>
+            <div class="form-white mb-4">
+              <label class="form-label" for="rPassword">Repeat Password</label>
+              <input required type="password" id="rPassword" name="rPassword" class="form-control form-control-lg" />
+            </div>
+            <button class="btn btn-outline-light btn-lg px-5" type="submit">Signup</button>
+          </div>
+
+          <div class="mb-md-5 mt-md-4 pb-1 col-6">
+            <div class="form-white mb-4 col-12">
+              <label class="form-label" for="fName">First Name</label>
+              <input required type="text" value="<%= userData.first_name%>" id="fName" name="fName" class="form-control form-control-lg" />
+              <small class="text-danger"><%= errors.first_name? errors.first_name: '' %></small>
+            </div>
+
+            <div class="form-white mb-4 col-12">
+              <label class="form-label" for="lName">Last Name</label>
+              <input required type="text" value="<%= userData.last_name%>" id="lName" name="lName" class="form-control form-control-lg" />
+              <small class="text-danger"><%= errors.last_name? errors.last_name: '' %></small>
+            </div>
+            <div class="form-white mb-4 col-12">
+              <label class="form-label" for="bio">Bio</label>
+              <textarea 
+              required type="text" rows="4" style="resize: none;" minlength="20"
+              maxlength="150" value="<%= userData.bio%>" id="bio" 
+              name="bio" class="form-control form-control-lg" 
+              ></textarea>
+              <small class="text-danger"><%= errors.bio? errors.bio: '' %></small>
+            </div>
+          
+          </div>
+
+            <p class="mb-3">Already have an account? 
+              <a href="/accounts/login" class="text-white-50 fw-bold">Login</a>
+            </p>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <%- include('../partials/_lower.ejs')%>
+
+  
